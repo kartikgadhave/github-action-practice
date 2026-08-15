@@ -1,0 +1,35 @@
+# worksflow
+# should have name
+name: CICD Pipline
+# on tell when workflow should run
+on:
+    workflow_dispatch: 
+
+#jobs tell what workflow should do, there can be one or more job, hence he write jobs
+#job has an object that needs implementation
+jobs:
+#1 job gives indentations
+    code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Clone the code 
+              run: echo " code are running "        
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build the docker
+              run: echo "building using docker"
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: running software
+              run: echo "running the software"
+    deploy:
+            runs-on: ubuntu-latest
+            steps:
+                - name: deploy on the machine
+                  run: echo "deployed the code"        
+         
+   
+
+
